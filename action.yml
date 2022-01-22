@@ -12,11 +12,14 @@ runs:
     - name: Get full Python version
       id: full-python-version
       run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
+      shell: bash
 
     - run: pip install poetry
+      shell: bash
 
     - name: Configure poetry
       run: poetry config virtualenvs.in-project true
+      shell: bash
 
     - name: Set up cache
       uses: actions/cache@v2
@@ -28,3 +31,4 @@ runs:
     - name: Ensure cache is healthy
       if: steps.cache.outputs.cache-hit == 'true'
       run: timeout 10s poetry run pip --version || rm -rf .venv
+      shell: bash
