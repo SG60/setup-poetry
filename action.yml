@@ -1,5 +1,8 @@
 name: 'Python Poetry Setup'
 description: 'Setup python poetry, ready to be used (with cache).'
+branding:
+  icon: 'package'
+  color: 'blue'
 runs:
   using: "composite"
   steps:
