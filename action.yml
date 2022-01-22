@@ -1,4 +1,4 @@
-name: 'Setup Python Poetry'
+name: 'Python Poetry Setup'
 description: 'Setup python poetry, ready to be used (with cache).'
 runs:
   using: "composite"
